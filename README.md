@@ -5,7 +5,7 @@
 </p>
 
 # Nome do Projeto
-
+Bicicleta inteligente
 ## Nome do Grupo
 
 ## Integrantes: <a href="https://www.linkedin.com/in/nathan-lucena-0a271a26a">Nathan Silva de Lucena</a>, <a href="https://www.linkedin.com/in/raissa-elias-873178232/">Raissa Elias Silva</a>, <a href="https://www.linkedin.com/in/marcella-santana-b76883262/">Marcella Santana Gonçalves Diniz Rocha</a>
