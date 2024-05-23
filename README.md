@@ -22,7 +22,7 @@ MNR
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
+Uma bicicleta 'inteligente' que conta a velocidade em km/h e os batimentos cardíacaos em bpm por meio de sensores aplicados em um arduíno esp32 que envia essas informações em tempo real a um app via plataforma Blynk e perrmite que o usuário monitore seu desempenho a qualquer instante. O projeto tem como objetivo o monitoramento de desempenho mas, também é possível ajudar pessoas que procuram o ciclismo como um exercício para melhorar a saúde e investir no bem-estar, e, assim, progredir a qualidade de vida. 
 <br><br>
 May the force be with you!
 <br><br>
