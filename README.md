@@ -110,3 +110,4 @@ Aqui estão as referências usadas no projeto.
 5. <https://lobodarobotica.com/blog/esp32-pinout/>
 6. <https://www.fernandok.com/2018/03/esp32-detalhes-internos-e-pinagem.html>
 7. <https://clubedomaker.com/esp32-pinout>
+8. <https://www.youtube.com/watch?v=W1xG_XJb0FU>
