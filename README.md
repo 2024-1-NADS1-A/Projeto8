@@ -15,7 +15,7 @@ MNR
 ## Descrição
 
 <p align="center">
-<![Texto Alternativo](https://photos.app.goo.gl/g8CLjMMkTQeYdHGY6) alt="NOME DO JOGO" border="0">
+<img src = "https://i.imgur.com/bdCi7eF.jpeg" alt="NOME DO JOGO" border="0">
   Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
 </p>
 
