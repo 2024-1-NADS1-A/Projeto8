@@ -15,10 +15,9 @@ MNR
 ## Descrição
 
 <p align="center">
+<img src = "https://i.imgur.com/isBKZ3g.jpeg">
 <img src = "https://i.imgur.com/NAtLLEr.jpeg">
-
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
+  Projeto por Marcella Santana, Raissa Elias e Nathan Lucena.
 
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
