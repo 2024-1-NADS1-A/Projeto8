@@ -52,51 +52,34 @@ Há também 4 pastas que seguem da seguinte forma:
 
 <b>documentos</b>: Toda a documentação estará nesta pasta.
 
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
-
 <b>imagens</b>: Imagens do sistema
 
 <b>src</b>: Pasta que contém o código fonte.
 
-## 🛠 Instalação
+## 🛠 Instalação Arduino IDE
+Abra seu navegador e vá para o site do arduino em arduino.cc, navegue até a seção de downloads: No menu superior, clique em Software e depos em Downloadds.
+Selecione seu sistema operacional, clique no botão paara baixar o instalador do Arduino IDE para Windows, após o download, abra o arquivo '.exe' baixado. Aceite os termos de uso: Na janelado instalador, você precisará aceitar os termos de uso. Escolha os componentes a serem instalados e o diretório de instalação: Você pode escolhar o local onde deseja instalar o Arduino IDE ou usar o caminho padrão sugerido. Depois clique em instalar e aguarde a conclusão do processo, após a instalação, clique em concluir e o Arduino IDE estará pronto para o uso.
+## 🛠 Configuração do esp32 no Arduino IDE
+Para configurar o Arduino IDE para ESP32, abra o Arduino IDE que você acabou de instalar, adicionar o url do gerenciador de placas vá em Arquivos > Preferências e no campo "URLs adicionais para Gerenciadores de Placas", adicione a seguinte URL: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+Abrir o Gerenciador de Placas: Vá em''Ferramentas'>'Placas'>'Gerenciador de Placas'. Instalar o pacote ESP32, na janela do gerenciador de placas, procure por esp32 e instale o pacote esp32 by Espressif Systems. Após a instalação, vá em ferramentas > placa e selecione a placa esp32 que você está utilizando ( por exemplo, ESP32 Dev Module).
 
-<b>Android:</b>
+Conecte a sua placa esp32 ao computador usando um cabo USB, Selecione a porta serial: Vá em ferramentas > porta e selecione a porta serial correspondente ao seu esp32.
+Depois vá em arquivo> exemplos > wifi > wifiscan ( ou qualquer outro exemplo que você prefira). Enviar o código para a placa, clique no botão upload ( seta para a direita) para compilar e enviar o código para a placa esp32.
+## 🛠 Definição do código do arduíno esp32 
+Para o arduíno esp32 definir seu código e conseguir a rede WiFi conectada a este, é preciso primeiro conseguir suas bibliotecas no próprio site do Arduino IDE. As bibliotecas usadas serão https://downloads.arduino.cc/libraries/github.com/iliaslamprou/Virtuino_library_for_all_ESP8266_and_ESP32_boards-1.7.2.zip para o arduíno esp32, 
 
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
+## 🛠 Instalação do Blynk
+Vá para o site do Blynk.io e clique em sign up para criar uma conta. Se você já tem uma conta, faça o login. Após fazer o login, vá para a seção Dashboard e clique em Create new para criar um novo projeto, selecione o tipo de dispositivo que você está usando (Arduino, ESP32, etc.) e o tipo de conexão (wifi, ethernet, bluetooth, etc). Depois de selecionar o tipo de dispositivo, você receberá um token de autentificação via e-mail. Este token é usado para vincular seu dispositivo ao aplicativo Blynk. Copie o código fornecido no aplicativo Blynk para o Arduino IDE, insira o token de autentificação no código onde indicado e faça o upload para o seu dispositivo, após carregar o código, seu dispositivo deve estar conectado ao aplicativo Blynk e pronto para uso. Teste os widgets para garantir que tudo funcione conforme o esperado.
 
-```sh
-Coloque código do prompt de comnando se for necessário
-```
 
-<b>Windows:</b>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
 
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
-## 💻 Configuração para Desenvolvimento
-
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
-
-Para abrir este projeto você necessita das seguintes ferramentas:
-
--<a href="https://godotengine.org/download">GODOT</a>
 
 ```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+Coloque código do prompt de comando se for necessário
 ```
 
+```
 ## 🗃 Histórico de lançamentos
 
 A cada atualização os detalhes devem ser lançados aqui.
