@@ -4,13 +4,13 @@
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Bicicleta Inteligente
-## MNR
+# Projeto: Bicicleta Inteligente
+## Grupo: MNR
 ## Integrantes: <a href="https://www.linkedin.com/in/nathan-lucena-0a271a26a">Nathan Silva de Lucena</a>, <a href="https://www.linkedin.com/in/raissa-elias-873178232/">Raissa Elias Silva</a>, <a href="https://www.linkedin.com/in/marcella-santana-b76883262/">Marcella Santana Gonçalves Diniz Rocha</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/adriano-valente-534576135/">Adriano Felix Valente</a>
 
-## Descrição
+## Descrição:
 
 <p align="center">
 <img src = "https://i.imgur.com/isBKZ3g.jpeg">
@@ -18,11 +18,9 @@
   Projeto por Marcella Santana, Raissa Elias e Nathan Lucena.
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+
 <br><br>
 Uma bicicleta 'inteligente' que conta a velocidade em km/h e os batimentos cardíacaos em bpm por meio de sensores aplicados em um arduíno esp32 que envia essas informações em tempo real a um app via plataforma Blynk e perrmite que o usuário monitore seu desempenho a qualquer instante. O projeto tem como objetivo o monitoramento de desempenho mas, também é possível ajudar pessoas que procuram o ciclismo como um exercício para melhorar a saúde e investir no bem-estar, e, assim, progredir a qualidade de vida. 
-<br><br>
-May the force be with you!
 <br><br>
 
 ## 🛠 Estrutura de pastas
@@ -66,26 +64,20 @@ Conecte a sua placa esp32 ao computador usando um cabo USB, Selecione a porta se
 Depois vá em arquivo> exemplos > wifi > wifiscan ( ou qualquer outro exemplo que você prefira). Enviar o código para a placa, clique no botão upload ( seta para a direita) para compilar e enviar o código para a placa esp32.
 <br>
 ## 🛠 Definição do código do arduíno esp32 
-Para definif o código do arduíno esp32 e conectar a rede WiFi e o Blynk a ele é preciso primeiro conseguir suas bibliotecas no próprio site do Arduino IDE. As bibliotecas usadas serão https://downloads.arduino.cc/libraries/github.com/iliaslamprou/Virtuino_library_for_all_ESP8266_and_ESP32_boards-1.7.2.zip para o arduíno esp32, https://downloads.arduino.cc/libraries/github.com/blynkkk/Blynk-1.3.2.zip para a biblioteca blynk, https://downloads.arduino.cc/libraries/github.com/arduino-libraries/WiFi-1.2.7.zip para o wifi. Para instalar as bibliotecas é possível através de sketch > include library > add zip library. 
-<br>Definir, no começo do código, o id do blynk, assim como o name, e o token necessário. Definir também Blynk print serial para desativar prints e economizar espaço. Com as bibliotecas instaladas, agora é necessário inclui-lás, no código. Agora, definir variáveis que leiam as credencias de WiFi por meio do nome da rede e a senha para que o arduíno os leia. Definir os pinos para os sensores como o de velocidade pino 4 e o frequência cardíaca pino 32. Em seguida, inserir variáveis para o cálculo de velocidade, com uma que armazene o último tempo em que o sensor foi ativdo, outra que armazene o intervalo de tempo entre as duas ativações do sensor, outra que armazene o último tempo de debounce (frequência com que uma função é executada em resposta a um evento), uma variável que leia o delay do debounce em milissegundos e uma última que leve em consideração a circunferência da roda para fazer o cálculo da velocidade. 
-<br>
-Necessário criar um objeto do tipo BlynkTimer para gerenciar as temporizações e em seguida uma função de interrupção para o sensor de velocidade. Na função, aplicar variáveis que leiam e obtém o tempo atual em milissegundos, que verifiquem se o tempo do debounce passou, calculem o intervalo de tempo entre duas ativações do sensor, que atualize o último tempo em que o sensor foi ativado e que também atualize o último tempo de debounce. <br>
-Iniciar a função setup e inserir o serial begin com o número 115200 para inicializar a comunicação serial, e inserir o blynk begin para conectar com as credenciais fornecidas no início. Definir o pino do sensor de velocidade como entrada pull-up e em seguida configura a interrupção no pino do sensor de velocidade para ativar na borda de descida e, por fim, configurar o sensor de frequência cardíaca como entrada. Definir o timer para chamar a função sendSensorData a cada segundo.<br>
-Na função void loop, manter a conexão com o Blynk e executar as funções do timer.<br>
-Com as função sendSensorData para que os dados dos sensores sejam enviados ao Blynk, é necessário definir o pulseValue e fazer com que seja lido seu valor analógico para o sensor de frequência cardíaca. Inicializar a variável de velocidade em km/h, e então verificar se há um intervalo de tempo válido com if, e, por meio de variáveis converter o intervalo de tempo para segundos e calcular a velocidade em cm/s. Por fim definir a velocidade para km/h. <br>
-Definir pinos virtuais para que a frequência cardíaca e a velocidade sejam, respectivamente, enviadas ao Blynk. Ao finalizar, imprimir os valores no monitor serial para depuração tanto do bpm quanto do km/h.<br>
+Para definir o código do arduíno esp32 e conectar a rede WiFi e o Blynk a ele é preciso primeiro conseguir suas bibliotecas no próprio site do Arduino IDE. As bibliotecas usadas serão https://downloads.arduino.cc/libraries/github.com/iliaslamprou/Virtuino_library_for_all_ESP8266_and_ESP32_boards-1.7.2.zip para o arduíno esp32, https://downloads.arduino.cc/libraries/github.com/blynkkk/Blynk-1.3.2.zip para a biblioteca blynk, https://downloads.arduino.cc/libraries/github.com/arduino-libraries/WiFi-1.2.7.zip para o wifi. Para instalar as bibliotecas é possível através de sketch > include library > add zip library. <br><br>
+Definir, no começo do código, o id do blynk, assim como o name, e o token necessário. Definir também Blynk print serial para desativar prints e economizar espaço. Com as bibliotecas instaladas, agora é necessário inclui-lás, no código. Agora, definir variáveis que leiam as credencias de WiFi por meio do nome da rede e a senha para que o arduíno os leia. Definir os pinos para os sensores como o de velocidade pino 4 e o frequência cardíaca pino 32. Em seguida, inserir variáveis para o cálculo de velocidade, com uma que armazene o último tempo em que o sensor foi ativdo, outra que armazene o intervalo de tempo entre as duas ativações do sensor, outra que armazene o último tempo de debounce (frequência com que uma função é executada em resposta a um evento), uma variável que leia o delay do debounce em milissegundos e uma última que leve em consideração a circunferência da roda para fazer o cálculo da velocidade. 
+<br><br>
+Necessário criar um objeto do tipo BlynkTimer para gerenciar as temporizações e em seguida uma função de interrupção para o sensor de velocidade. Na função, aplicar variáveis que leiam e obtém o tempo atual em milissegundos, que verifiquem se o tempo do debounce passou, calculem o intervalo de tempo entre duas ativações do sensor, que atualize o último tempo em que o sensor foi ativado e que também atualize o último tempo de debounce. <br><br>
+Iniciar a função setup e inserir o serial begin com o número 115200 para inicializar a comunicação serial, e inserir o blynk begin para conectar com as credenciais fornecidas no início. Definir o pino do sensor de velocidade como entrada pull-up e em seguida configura a interrupção no pino do sensor de velocidade para ativar na borda de descida e, por fim, configurar o sensor de frequência cardíaca como entrada. Definir o timer para chamar a função sendSensorData a cada segundo.<br><br>
+Na função void loop, manter a conexão com o Blynk e executar as funções do timer.<br><br>
+Com as função sendSensorData para que os dados dos sensores sejam enviados ao Blynk, é necessário definir o pulseValue e fazer com que seja lido seu valor analógico para o sensor de frequência cardíaca. Inicializar a variável de velocidade em km/h, e então verificar se há um intervalo de tempo válido com if, e, por meio de variáveis converter o intervalo de tempo para segundos e calcular a velocidade em cm/s. Por fim definir a velocidade para km/h. <br><br>
+Definir pinos virtuais para que a frequência cardíaca e a velocidade sejam, respectivamente, enviadas ao Blynk. Ao finalizar, imprimir os valores no monitor serial para depuração tanto do bpm quanto do km/h.<br><br>
+
 
 ## 🛠 Instalação e Configuração do Blynk
-Vá para o site do Blynk.io e clique em sign up para criar uma conta. Se você já tem uma conta, faça o login. Após fazer o login, vá para a seção Dashboard e clique em Create new para criar um novo projeto, selecione o tipo de dispositivo que você está usando (Arduino, ESP32, etc.) e o tipo de conexão (wifi, ethernet, bluetooth, etc). Depois de selecionar o tipo de dispositivo, você receberá um token de autentificação via e-mail. Este token é usado para vincular seu dispositivo ao aplicativo Blynk. <br>
+Vá para o site do Blynk.io e clique em sign up para criar uma conta. Se você já tem uma conta, faça o login. Após fazer o login, vá para a seção Dashboard e clique em Create new para criar um novo projeto, selecione o tipo de dispositivo que você está usando (Arduino, ESP32, etc.) e o tipo de conexão (wifi, ethernet, bluetooth, etc). Depois de selecionar o tipo de dispositivo, você receberá um token de autentificação via e-mail. Este token é usado para vincular seu dispositivo ao aplicativo Blynk. <br><br>
+
 Copie o código fornecido no aplicativo Blynk para o Arduino IDE, insira o token de autentificação no código onde indicado e faça o upload para o seu dispositivo, após carregar o código, seu dispositivo deve estar conectado ao aplicativo Blynk e pronto para uso. Teste os widgets para garantir que tudo funcione conforme o esperado.
-
-
-
-
-
-```sh
-Coloque código do prompt de comando se for necessário
-```
 
 ```
 ## 🗃 Histórico de lançamentos
