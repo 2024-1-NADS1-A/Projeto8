@@ -73,7 +73,7 @@ Na função void loop, manter a conexão com o Blynk e executar as funções do 
 Com as função sendSensorData para que os dados dos sensores sejam enviados ao Blynk, é necessário definir o pulseValue e fazer com que seja lido seu valor analógico para o sensor de frequência cardíaca. Inicializar a variável de velocidade em km/h, e então verificar se há um intervalo de tempo válido com if, e, por meio de variáveis converter o intervalo de tempo para segundos e calcular a velocidade em cm/s. Por fim definir a velocidade para km/h. 
 Definir pinos virtuais para que a frequência cardíaca e a velocidade sejam, respectivamente, enviadas ao Blynk. Ao finalizar, imprimir os valores no monitor serial para depuração tanto do bpm quanto do km/h.
 
-## 🛠 Instalação do Blynk
+## 🛠 Instalação e Configuração do Blynk
 Vá para o site do Blynk.io e clique em sign up para criar uma conta. Se você já tem uma conta, faça o login. Após fazer o login, vá para a seção Dashboard e clique em Create new para criar um novo projeto, selecione o tipo de dispositivo que você está usando (Arduino, ESP32, etc.) e o tipo de conexão (wifi, ethernet, bluetooth, etc). Depois de selecionar o tipo de dispositivo, você receberá um token de autentificação via e-mail. Este token é usado para vincular seu dispositivo ao aplicativo Blynk. Copie o código fornecido no aplicativo Blynk para o Arduino IDE, insira o token de autentificação no código onde indicado e faça o upload para o seu dispositivo, após carregar o código, seu dispositivo deve estar conectado ao aplicativo Blynk e pronto para uso. Teste os widgets para garantir que tudo funcione conforme o esperado.
 
 
