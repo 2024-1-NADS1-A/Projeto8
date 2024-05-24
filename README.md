@@ -53,16 +53,16 @@ Há também 4 pastas que seguem da seguinte forma:
 <b>src</b>: Pasta que contém o código fonte.
 
 ## 🛠 Instalação Arduino IDE
-Abra seu navegador e vá para o site do arduino em arduino.cc, navegue até a seção de downloads: No menu superior, clique em Software e depos em Downloadds.
-Selecione seu sistema operacional, clique no botão paara baixar o instalador do Arduino IDE para Windows, após o download, abra o arquivo '.exe' baixado. Aceite os termos de uso: Na janelado instalador, você precisará aceitar os termos de uso. Escolha os componentes a serem instalados e o diretório de instalação: Você pode escolhar o local onde deseja instalar o Arduino IDE ou usar o caminho padrão sugerido. Depois clique em instalar e aguarde a conclusão do processo, após a instalação, clique em concluir e o Arduino IDE estará pronto para o uso.
-<br>
+Abra seu navegador e vá para o site do arduino em arduino.cc, navegue até a seção de downloads: No menu superior, clique em Software e depos em Downloads.<br><br>
+Selecione seu sistema operacional, clique no botão paara baixar o instalador do Arduino IDE para Windows, após o download, abra o arquivo '.exe' baixado. Aceite os termos de uso. Na janela do instalador, você precisará aceitar os termos de uso. Escolha os componentes a serem instalados e o diretório de instalação; você pode escolhar o local onde deseja instalar o Arduino IDE ou usar o caminho padrão sugerido. Depois clique em instalar e aguarde a conclusão do processo e, após a instalação, clique em concluir e o Arduino IDE estará pronto para o uso.
+<br><br>
 ## 🛠 Configuração do esp32 no Arduino IDE
 Para configurar o Arduino IDE para ESP32, abra o Arduino IDE que você acabou de instalar, adicionar o url do gerenciador de placas vá em Arquivos > Preferências e no campo "URLs adicionais para Gerenciadores de Placas", adicione a seguinte URL: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-Abrir o Gerenciador de Placas: Vá em''Ferramentas'>'Placas'>'Gerenciador de Placas'. Instalar o pacote ESP32, na janela do gerenciador de placas, procure por esp32 e instale o pacote esp32 by Espressif Systems. Após a instalação, vá em ferramentas > placa e selecione a placa esp32 que você está utilizando ( por exemplo, ESP32 Dev Module).
-
+Abrir o Gerenciador de Placas: Vá em''Ferramentas'>'Placas'>'Gerenciador de Placas'. Instalar o pacote ESP32, na janela do gerenciador de placas, procure por esp32 e instale o pacote esp32 by Espressif Systems. Após a instalação, vá em ferramentas > placa e selecione a placa esp32 que você está utilizando como Dev Kit Module.
+<br><br>
 Conecte a sua placa esp32 ao computador usando um cabo USB, Selecione a porta serial: Vá em ferramentas > porta e selecione a porta serial correspondente ao seu esp32.
 Depois vá em arquivo> exemplos > wifi > wifiscan ( ou qualquer outro exemplo que você prefira). Enviar o código para a placa, clique no botão upload ( seta para a direita) para compilar e enviar o código para a placa esp32.
-<br>
+<br><br>
 ## 🛠 Definição do código do arduíno esp32 
 Para definir o código do arduíno esp32 e conectar a rede WiFi e o Blynk a ele é preciso primeiro conseguir suas bibliotecas no próprio site do Arduino IDE. As bibliotecas usadas serão https://downloads.arduino.cc/libraries/github.com/iliaslamprou/Virtuino_library_for_all_ESP8266_and_ESP32_boards-1.7.2.zip para o arduíno esp32, https://downloads.arduino.cc/libraries/github.com/blynkkk/Blynk-1.3.2.zip para a biblioteca blynk, https://downloads.arduino.cc/libraries/github.com/arduino-libraries/WiFi-1.2.7.zip para o wifi. Para instalar as bibliotecas é possível através de sketch > include library > add zip library. <br><br>
 Definir, no começo do código, o id do blynk, assim como o name, e o token necessário. Definir também Blynk print serial para desativar prints e economizar espaço. Com as bibliotecas instaladas, agora é necessário inclui-lás, no código. Agora, definir variáveis que leiam as credencias de WiFi por meio do nome da rede e a senha para que o arduíno os leia.  <br><br>
