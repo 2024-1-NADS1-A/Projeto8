@@ -80,7 +80,6 @@ Vá para o site do Blynk.io e clique em sign up para criar uma conta. Se você j
 
 Copie o código fornecido no aplicativo Blynk para o Arduino IDE, insira o token de autentificação no código onde indicado e faça o upload para o seu dispositivo, após carregar o código, seu dispositivo deve estar conectado ao aplicativo Blynk e pronto para uso. Teste os widgets para garantir que tudo funcione conforme o esperado.
 
-```
 ## 🗃 Histórico de lançamentos
 
 A cada atualização os detalhes devem ser lançados aqui.
