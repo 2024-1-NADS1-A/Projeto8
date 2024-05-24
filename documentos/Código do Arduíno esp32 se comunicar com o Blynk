@@ -1,0 +1,75 @@
+// Definições do Blynk (devem ser definidas antes de incluir as bibliotecas)
+#define BLYNK_TEMPLATE_ID "TMPL2r-mY8sjb"
+#define BLYNK_TEMPLATE_NAME "Bicicleta inteligente"
+#define BLYNK_AUTH_TOKEN "Rf3tKJapBrys6U_NrlvoCUJFOBDU5ZMY"
+
+// Comente isso para desativar prints e economizar espaço
+#define BLYNK_PRINT Serial
+
+// Inclusão das bibliotecas necessárias
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+// Suas credenciais WiFi. Defina a senha como "" para redes abertas.
+char ssid[] = "A55 de Marcella";
+char pass[] = "vpfqiy79nty7mmj";
+
+#define SPEED_PIN 4
+#define HEART_PIN 32
+
+volatile unsigned long lastTime = 0;
+volatile unsigned long timeInterval = 0;
+unsigned long lastDebounceTime = 0;
+unsigned long debounceDelay = 50;
+double circumference = 69.08; // Circunferência da roda em cm
+
+BlynkTimer timer;
+
+// Função de interrupção para o sensor de velocidade
+void IRAM_ATTR speedSensorInterrupt() {
+  unsigned long currentTime = millis();
+  if (currentTime - lastDebounceTime > debounceDelay) {
+    timeInterval = currentTime - lastTime;
+    lastTime = currentTime;
+    lastDebounceTime = currentTime;
+  }
+}
+
+void setup() {
+  Serial.begin(115200); // Inicializa a comunicação serial a 115200 bps
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass); // Conecta ao Blynk usando as credenciais fornecidas
+
+  pinMode(SPEED_PIN, INPUT_PULLUP); // Configura o pino do sensor de velocidade como entrada com pull-up
+  attachInterrupt(digitalPinToInterrupt(SPEED_PIN), speedSensorInterrupt, FALLING); // Configura a interrupção no pino do sensor de velocidade para ativar na borda de descida
+  pinMode(HEART_PIN, INPUT); // Configura o pino do sensor de frequência cardíaca como entrada
+
+  timer.setInterval(1000L, sendSensorData); // Configura o timer para chamar a função sendSensorData a cada segundo
+}
+
+void loop() {
+  Blynk.run(); // Mantém a conexão com o Blynk
+  timer.run(); // Executa as funções do timer
+}
+
+void sendSensorData() {
+  int analogValue = analogRead(HEART_PIN); // Lê o valor analógico do sensor de frequência cardíaca
+  int pulseValue = map(analogValue, 0, 4095, 0, 150); // Mapeia o valor analógico para um valor de BPM realista (0-150 BPM)
+
+  double speedKmh = 0.0; // Inicializa a variável de velocidade em km/h
+  if (timeInterval > 0) { // Verifica se há um intervalo de tempo válido
+    double timeSec = timeInterval / 1000.0; // Converte o intervalo de tempo para segundos
+    double speedCmPerSec = circumference / timeSec; // Calcula a velocidade em cm/s
+    speedKmh = (speedCmPerSec * 3600) / 100000; // Converte a velocidade para km/h
+  }
+
+  Blynk.virtualWrite(V1, pulseValue); // Envia a frequência cardíaca ao Blynk
+  Blynk.virtualWrite(V2, speedKmh); // Envia a velocidade ao Blynk
+
+  // Imprime os valores no monitor serial para depuração
+  Serial.print("Pulse: ");
+  Serial.print(pulseValue);
+  Serial.print(" BPM, Speed: ");
+  Serial.print(speedKmh);
+  Serial.println(" km/h");
+}
